@@ -51,6 +51,11 @@
 		A451786F2C85C9B10063FB17 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				A45178822C85CD9B0063FB17 /* Views */,
+				A45178812C85CD960063FB17 /* ViewModel */,
+				A45178802C85CD920063FB17 /* Model */,
+				A451787F2C85CD8D0063FB17 /* UIComponent */,
+				A451787E2C85CD870063FB17 /* Network */,
 				A45178702C85C9B10063FB17 /* NewsAppApp.swift */,
 				A45178722C85C9B10063FB17 /* ContentView.swift */,
 				A45178742C85C9B20063FB17 /* Assets.xcassets */,
@@ -65,6 +70,41 @@
 				A45178772C85C9B20063FB17 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A451787E2C85CD870063FB17 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A451787F2C85CD8D0063FB17 /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		A45178802C85CD920063FB17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A45178812C85CD960063FB17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A45178822C85CD9B0063FB17 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
