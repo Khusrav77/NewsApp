@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var news: [Article] = []
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
-        }
-        .onAppear{
-            Task {
-                
-            }
         }
     }
 }
