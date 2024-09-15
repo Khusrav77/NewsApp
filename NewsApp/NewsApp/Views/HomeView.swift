@@ -14,7 +14,7 @@ struct HomeView: View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 
-                Text("Top News")
+                Text("Apple News")
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -23,8 +23,24 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        ForEach (vm.news, id: \.url) { article in
+                        ForEach (vm.AppleNews, id: \.url) { article in
                             TopArticleView(article: article)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
+                Text("Tesla News")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.leading)
+                    .padding(.top)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach (vm.TeslaNews, id: \.url) { article in
+                            BottomNewsView(article: article)
                         }
                     }
                     .padding(.horizontal)
