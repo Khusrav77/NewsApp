@@ -13,12 +13,10 @@ protocol NetworkManagerProtocol {
 }
 
 // MARK: - NetworkManager
-final class NetworkManager: NetworkManagerProtocol {
+final class NetworkManager {
     
     // MARK: - Properties
     static let shared = NetworkManager()
-    private let url = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=5dd079f0bc5342bba152602a26d4387a"
-    private let urlNews = "https://newsapi.org/v2/everything?q=apple&from=2024-09-01&to=2024-09-01&sortBy=popularity&apiKey=5dd079f0bc5342bba152602a26d4387a"
     private let decoder = JSONDecoder()
    
     // MARK: - Initializer
@@ -27,7 +25,7 @@ final class NetworkManager: NetworkManagerProtocol {
     }
     
     // MARK: - Methods
-    func getNews() async throws -> News {
+    func getNews(urlNews: String) async throws -> News {
         guard let url = URL(string: urlNews) else { throw NetworkError.invalidURL }
         let (data, response) = try await URLSession.shared.data(from: url)
         
