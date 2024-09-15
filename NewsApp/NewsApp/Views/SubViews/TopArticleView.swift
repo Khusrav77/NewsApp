@@ -22,7 +22,7 @@ struct TopArticleView: View {
                         image
                             .resizable()
                             .scaledToFill()
-                            .frame(height: 150)
+                            .frame(width: 260, height: 150)
                             .clipShape(.rect(cornerRadius: 10))
                     } else {
                         ZStack {
@@ -58,4 +58,8 @@ struct TopArticleView: View {
         .background(.background)
         .clipShape(.rect(cornerRadius: 15))
     }
+}
+
+#Preview {
+    HomeView()
 }
