@@ -7,20 +7,21 @@
 
 import Foundation
 
+
 struct News: Decodable {
-    let status: String
-    let totalResults: Int
-    let articles: [Article]
+    var status: String
+    var totalResults: Int
+    var articles: [Article]
 }
 
 
+
 struct Article: Decodable {
-    let title: String
-    let description: String
-    let url: String
-    let urlToImage: String
-    let publishedAt: Date
-    
+    var title: String
+    var description: String?
+    var url: String
+    var urlToImage: String?
+    var publishedAt: Date
 }
 
 
