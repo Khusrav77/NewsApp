@@ -9,10 +9,14 @@ import SwiftUI
 
 struct GradientAvatarView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { _ in
+            LinearGradient(
+                colors: [Color(UIColor.systemBackground), .clear],
+                startPoint: .bottom,
+                endPoint: .top
+            )
+            .frame(height: SizeConstans.avatarHeight / 4)
+            .offset(y: -SizeConstans.avatarHeight / 4)
+        }
     }
-}
-
-#Preview {
-    GradientAvatarView()
 }
