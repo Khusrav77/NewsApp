@@ -8,11 +8,48 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    // MARK: - Properties
+    let article: Article
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView(.vertical, showsIndicators: false) {
+            MainImageView(article: article)
+            
+            VStack(alignment: .leading, spacing: 20) {
+                Text(article.title)
+                    .titleFont()
+                
+                if let description = article.description {
+                    Text(description)
+                        .descriptionFont()
+                }
+                
+                
+                Text(article.publishedAt.convertDate())
+                    .descriptionFont()
+            }
+            .padding(.horizontal)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(.background)
+            .background(GradientAvatarView())
+        }
+        .navigationBarHidden(true)
     }
 }
 
 #Preview {
-    DetailView()
+    DetailView(
+            article: Article(
+            title: "title",
+            description: "hghghghghgh",
+            url: "",
+            urlToImage: "https://picsum.photos/200",
+            publishedAt: Date()
+        )
+    )
 }
+
+

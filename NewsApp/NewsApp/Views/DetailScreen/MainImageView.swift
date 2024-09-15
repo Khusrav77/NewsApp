@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct MainImageView: View {
+    
+    // MARK: - Properties
+    let article: Article
+    
+    // MARK: - Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            if let url = article.urlToImage, let imageUrl = URL(string: url) {
+                AsyncImage(url: imageUrl) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .offset(y: -geometry.frame(in: .global).minY)
+                            .frame(width: SizeConstans.screenWidth, height: geometry.frame(in: .global).minY + SizeConstans.avatarHeight + 10)
+                    }
+                }
+            }
+        }
+        .frame(height: SizeConstans.avatarHeight)
     }
 }
 
-#Preview {
-    MainImageView()
-}
