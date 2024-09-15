@@ -16,12 +16,12 @@ final class ViewModel: ObservableObject {
     
     // MARK: - Initializet
     init() {
-        fetchTopNews()
-        fetchBottomNews()
+        fetchAppleNews()
+        fetchTeslaNews()
     }
     
     // MARK: - Mtheds
-    func fetchTopNews() {
+    func fetchAppleNews() {
         Task {
             do {
                 let articles = try await NetworkManager.shared.getNews(urlNews: URLConstants.AppleNews)
@@ -34,7 +34,7 @@ final class ViewModel: ObservableObject {
         }
     }
     
-    func fetchBottomNews() {
+    func fetchTeslaNews() {
         Task {
             do {
                 let articles = try await NetworkManager.shared.getNews(urlNews: URLConstants.TeslaNews)
