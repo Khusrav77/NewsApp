@@ -11,19 +11,34 @@ import Foundation
 final class ViewModel: ObservableObject {
     
     // MARK: - Properties
-    @Published var news: [Article] = []
+    @Published var AppleNews: [Article] = []
+    @Published var TeslaNews: [Article] = []
     
     // MARK: - Initializet
     init() {
-        fetchNews()
+        fetchAppleNews()
+        fetchTeslaNews()
     }
     
     // MARK: - Mtheds
-    func fetchNews() {
+    func fetchAppleNews() {
         Task {
             do {
-                let articles = try await NetworkManager.shared.getNews()
-                news = articles.articles
+                let articles = try await NetworkManager.shared.getNews(urlNews: URLConstants.AppleNews)
+                AppleNews = articles.articles
+            } catch  {
+                if let error = error as? NetworkError {
+                    print(error)
+                }
+            }
+        }
+    }
+    
+    func fetchTeslaNews() {
+        Task {
+            do {
+                let articles = try await NetworkManager.shared.getNews(urlNews: URLConstants.TeslaNews)
+                TeslaNews = articles.articles
             } catch  {
                 if let error = error as? NetworkError {
                     print(error)
