@@ -25,6 +25,7 @@
 		A45178882C85DC0B0063FB17 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45178872C85DC0B0063FB17 /* NetworkError.swift */; };
 		A451788A2C85F5960063FB17 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45178892C85F5960063FB17 /* ViewModel.swift */; };
 		A451788C2C85FD390063FB17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A451788B2C85FD390063FB17 /* HomeView.swift */; };
+		A47F80BD2C983C38006F6839 /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47F80BC2C983C37006F6839 /* BackButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A45178872C85DC0B0063FB17 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A45178892C85F5960063FB17 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		A451788B2C85FD390063FB17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A47F80BC2C983C37006F6839 /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,20 +71,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A43F66AD2C971B3C00C0F9BA /* SubViews */ = {
+		A43F66AD2C971B3C00C0F9BA /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				A43F66AE2C971B6200C0F9BA /* TopArticleView.swift */,
 				A43F66B02C9732D500C0F9BA /* BottomNewsView.swift */,
 			);
-			path = SubViews;
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		A43F66B42C97525500C0F9BA /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
 				A451788B2C85FD390063FB17 /* HomeView.swift */,
-				A43F66AD2C971B3C00C0F9BA /* SubViews */,
+				A43F66AD2C971B3C00C0F9BA /* Subviews */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -91,8 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				A43F66B72C976CA800C0F9BA /* DetailView.swift */,
-				A43F66BB2C97782E00C0F9BA /* MainImageView.swift */,
-				A43F66BD2C977EDA00C0F9BA /* GradientAvatarView.swift */,
+				A47F80BE2C983E74006F6839 /* Subviews */,
 			);
 			path = DetailScreen;
 			sourceTree = "<group>";
@@ -121,9 +122,8 @@
 				A45178802C85CD920063FB17 /* Model */,
 				A451787E2C85CD870063FB17 /* Network */,
 				A43F66A82C970D1900C0F9BA /* Extensions */,
-				A451787F2C85CD8D0063FB17 /* Helper */,
-				A45178702C85C9B10063FB17 /* NewsAppApp.swift */,
-				A45178722C85C9B10063FB17 /* ContentView.swift */,
+				A451787F2C85CD8D0063FB17 /* UIComponents */,
+				A47F80BF2C983F0C006F6839 /* App */,
 				A45178742C85C9B20063FB17 /* Assets.xcassets */,
 				A45178762C85C9B20063FB17 /* Preview Content */,
 			);
@@ -148,12 +148,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		A451787F2C85CD8D0063FB17 /* Helper */ = {
+		A451787F2C85CD8D0063FB17 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				A43F66B92C97736700C0F9BA /* SizeConstans.swift */,
 			);
-			path = Helper;
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		A45178802C85CD920063FB17 /* Model */ = {
@@ -179,6 +179,25 @@
 				A43F66B62C976C6A00C0F9BA /* DetailScreen */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A47F80BE2C983E74006F6839 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A43F66BB2C97782E00C0F9BA /* MainImageView.swift */,
+				A43F66BD2C977EDA00C0F9BA /* GradientAvatarView.swift */,
+				A47F80BC2C983C37006F6839 /* BackButtonView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A47F80BF2C983F0C006F6839 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A45178702C85C9B10063FB17 /* NewsAppApp.swift */,
+				A45178722C85C9B10063FB17 /* ContentView.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +277,7 @@
 				A45178732C85C9B10063FB17 /* ContentView.swift in Sources */,
 				A45178712C85C9B10063FB17 /* NewsAppApp.swift in Sources */,
 				A45178862C85D4D70063FB17 /* Model.swift in Sources */,
+				A47F80BD2C983C38006F6839 /* BackButtonView.swift in Sources */,
 				A43F66B12C9732D500C0F9BA /* BottomNewsView.swift in Sources */,
 				A43F66BA2C97736700C0F9BA /* SizeConstans.swift in Sources */,
 				A43F66B82C976CA800C0F9BA /* DetailView.swift in Sources */,

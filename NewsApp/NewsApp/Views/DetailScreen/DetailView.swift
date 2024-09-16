@@ -15,28 +15,33 @@ struct DetailView: View {
     // MARK: - Body
     var body: some View {
         
-        ScrollView(.vertical, showsIndicators: false) {
-            MainImageView(article: article)
-            
-            VStack(alignment: .leading, spacing: 20) {
-                Text(article.title)
-                    .titleFont()
+        ZStack(alignment: .topLeading) {
+            ScrollView(.vertical, showsIndicators: false) {
+                MainImageView(article: article)
                 
-                if let description = article.description {
-                    Text(description)
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(article.title)
+                        .titleFont()
+                    
+                    if let description = article.description {
+                        Text(description)
+                            .descriptionFont()
+                    }
+                    
+                    
+                    Text(article.publishedAt.convertDate())
                         .descriptionFont()
                 }
-                
-                
-                Text(article.publishedAt.convertDate())
-                    .descriptionFont()
+                .padding(.horizontal)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(.background)
+                .background(GradientAvatarView())
             }
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(.background)
-            .background(GradientAvatarView())
+            .navigationBarHidden(true)
+            
+            BackButtonView()
+                .padding(.leading)
         }
-        .navigationBarHidden(true)
     }
 }
 
